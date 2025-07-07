@@ -1,0 +1,22 @@
+{
+  "name": "pw-exam-chris",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisjamessqli/pw-exam-chris.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisjamessqli/pw-exam-chris/issues"
+  },
+  "homepage": "https://github.com/chrisjamessqli/pw-exam-chris#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.53.2",
+    "@types/node": "^24.0.10"
+  }
+}
