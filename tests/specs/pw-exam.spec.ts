@@ -12,7 +12,7 @@ test('register new user success', async ({ page, pageManager, user, request }) =
   await pageManager.onRegisterForm().submitRegisterForm()
   await expect (pageManager.onRegisterForm().registrationSuccessMessage).toBeVisible();
 
-  // Check via API that newly created user can login
+  // Check via API that newly created user exists
   const loginReponse = await request.post('https://parabank.parasoft.com/parabank/login.htm', {
     maxRedirects: 0,  // Ensure the API request doesn't get redirected resulting in 200 status code
     form: {
@@ -22,11 +22,11 @@ test('register new user success', async ({ page, pageManager, user, request }) =
   });
   expect(loginReponse.status()).toBe(302);
 
-  // Logout via FE
+  // Logout sucessfully via FE
   await pageManager.onLeftPanel().clickLogoutLink();
   await expect (pageManager.onLeftPanel().registerLink).toBeVisible();
 
-  // Login via FE
+  // Login successfully via FE
   await pageManager.onLeftPanel().fillLoginForm(user);
   await pageManager.onLeftPanel().submitLoginForm();
   await expect(pageManager.onLeftPanel().logoutLink).toBeVisible();
