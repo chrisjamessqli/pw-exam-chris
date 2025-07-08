@@ -22,7 +22,7 @@ test('register new user success', async ({ page, pageManager, user, request }) =
   });
   expect(loginReponse.status()).toBe(302);
 
-  // Logout sucessfully via FE
+  // Logout successfully via FE
   await pageManager.onLeftPanel().clickLogoutLink();
   await expect (pageManager.onLeftPanel().registerLink).toBeVisible();
 
